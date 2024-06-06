@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-VvO1AFDdgMUQ1zN0X8K94TjJU1vW2GG6eb8MB7Y+frztoBoTcGfTtSUqV6DrL5lV71Py2ujn+sHb3K6cNpIuZA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-VvO1AFDdgMUQ1zN0X8K94TjJU1vW2GG6eb8MB7Y+frztoBoTcGfTtSUqV6DrL5lV71Py2ujn+sHb3K6cNpIuZA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <style>
+body {
+    padding: 0;
+    margin: 0;
+    font-family: Garamond;
+    background-color: #171717;
+    position: relative; /* Posición relativa para el círculo */
+}
+.card-body {
+            border-radius: 10px; 
+        }
+.circulo-menta {
+            width: 80px; /* DiÃ¡metro del cÃ­rculo */
+            height: 80px; /* DiÃ¡metro del cÃ­rculo */
+            background-color: white; /* Color menta claro */
+            border: 2px solid #000; /* Borde negro */
+            border-radius: 50%; /* Hace que el div sea un cÃ­rculo */
+            position: absolute; /* Posiciona el cÃ­rculo de manera absoluta */
+            top: 160px; /* Distancia desde la parte superior */
+            left: 50px; /* Distancia desde la parte izquierda */
+            z-index: 1; /* Asegura que el cÃ­rculo estÃ© por encima de otros elementos */
+        }
+.navbar {
+    background-color: black;
+    overflow: visible; /* Mantener visible para el menú desplegable */
+    height: 70px;
+    z-index: 1000;
+    position: relative; /* Asegura que el dropdown se posicione correctamente */
+    display: flex;
+    justify-content: flex-end; /* Alinea todos los elementos hijos a la derecha */
+    align-items: center;
+}
+.navbar-right a {
+    margin-left: 15px;
+    font-size: 25px;
+    color: blue;
+    text-decoration: none;
+}
+.navbar-right {
+    display: flex;
+    align-items: center;
+    height: 100%; /* Asegura que los elementos hijos se alineen verticalmente */
+    padding-right: 300px; /* Ajuste para agregar espacio a la derecha */
+}
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: black;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+    z-index: 1000;
+    /* Ajustar la posición del menú desplegable */
+    left: -130px; /* Mueve el menú 130px a la izquierda del botón */
+    top: 100%; /* Asegura que el menú se despliegue justo debajo del botón */
+}
+.dropdown-content a {
+    color: blue;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-size:20px;
+}
+.dropdown-content a:hover {
+    background-color: #3a3a3a;
+}
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+.dropdown:hover .dropbtn {
+    color: white;
+}
+a.dropbtn {
+    color: blue;
+    font-size: 25px;
+    text-decoration: none;
+    margin-left: 15px;
+}
+.im{
+    width: 25px;
+    height: auto;
+    margin-left: 10px;
+}
+
+.img{
+    width: 25px;
+    height: auto;
+}
+.card-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 65vh; 
+            margin-right: auto;
+}
+.card{
+    margin-left: 200px;
+    border-radius: 10%;
+}
+footer {
+            background-color:black; /* Color de fondo */
+            color: #fff; /* Color del texto */
+            padding: 20px; /* Espaciado interno */
+            text-align: center; /* Alineación del texto */
+ /* Fijar el footer en la parte inferior de la ventana */
+            width: 100%; /* Ancho completo */
+            bottom: 0; /* Posicionar al fondo */
+            display: flex; /* Utilizar flexbox para dividir el footer en dos secciones */
+            justify-content: space-between; /* Espacio entre las dos secciones */
+            border: #fff;
+            border-width: 1px;
+            border-style: solid;
+        }
+
+        /* Estilos para la sección izquierda */
+        .left-section {
+            text-align: left; /* Alineación del texto a la izquierda */
+        }
+
+        .left-section img{
+            width: 200px;
+            height: auto;
+            margin-left: 100px;
+        }
+        /* Estilos para la sección derecha */
+        .right-section {
+            text-align: right; /* Alineación del texto a la derecha */
+        }
+                /* Estilos para la sección derecha */
+                .right-section p{
+                    margin: 0;
+                    text-align: center;
+                    margin-right: 100px;
+                }
+.texto{
+    display: flex;
+  justify-content: center;
+}
+.texto a{
+font-size: 100px;
+color: white;
+}
+
+</style>
+</head>
+<body>
+    <div class="circulo-menta"></div> 
+    <nav class="navbar">
+        <div class="navbar-right">
+          <a href="#">iniciar sesión</a>
+          <a href="#" class="registro">registrarse</a>
+        </div>
+
+        <div class="dropdown">
+            <a href="#" class="dropbtn">☰</a>
+            <div class="dropdown-content">
+                <a href="#"> historia <img src="img/icons8-libro-50.png" alt="" class="im"></a>
+                <a href="#">horarios <img src="img/icons8-reloj-50.png" alt="" class="im"></a>
+                <a href="#"> menu <img src="img/icons8-cuchillo-y-spatchula-50.png" alt="" class="im"></a>
+                <a href="#">sugerencias <img src="img/icons8-enviado-50.png" alt="" class="im"></a>
+                <a href="#"> reseñas  <br><img src="img/icons8-star-50.png" alt="" class="img">  <img src="img/icons8-star-50.png" alt="" class="img"> <img src="img/icons8-star-50.png" alt="" class="img"> <img src="img/icons8-estrella-50.png" alt="" class="img"></a>
+                <a href="#">ubicacion <img src="img/location.png" alt="" class="im"></a>
+            </div>
+        </div>
+    </nav>
+
+
+    <div class="texto"><a href="">Tacos</a></div>
+
+
+    <div class="card-container">
+
+        <div class="card" style="width: 18rem;">
+            <img src="img/tacos-clasicos.jpg" class="card-img-top" alt="..." style="height: 300px; object-fit: cover; border-radius: 10%;">
+            <div class="card-body">
+                <p class="card-text">Some tur </p>
+            </div>
+        </div>
+      
+        <div class="card" style="width: 18rem;">
+            <img src="img/tacos-clasicos.jpg" class="card-img-top" alt="..." style="height: 300px; object-fit: cover;  border-radius: 10%;">
+            <div class="card-body">
+                <p class="card-text">Song elit. Sed non ris</p>
+            </div>
+        </div>
+      
+        <div class="card" style="width: 18rem;">
+            <img src="img/tacos-clasicos.jpg" class="card-img-top" alt="..." style="height: 300px; object-fit: cover; border-radius: 10%;">
+            <div class="card-body">
+                <p class="card-text">iscing ed, dolor.</p>
+            </div>
+        </div>
+    </div>
+      
+    <footer>
+        <!-- Sección izquierda -->
+        <div class="left-section">
+            <img src="img/p2.png" alt="">
+        </div>
+
+        <!-- Sección derecha -->
+        <div class="right-section">
+            <p>VISITANOS</p>
+            <p>Av. López Mateos 11-local a 17 de Octubre, 92880 </p>
+            <p>Tuxpam de Rodríguez Cano Veracruz</p>
+        </div>
+
+    </footer>
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>
